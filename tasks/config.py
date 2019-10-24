@@ -10,6 +10,7 @@ timezone = "Asia/Shanghai"
 imports = (
     "tasks.trainer",
 )
+include = ["tasks.trainer"]
 
 # beat-schedule暂时用不上
 
