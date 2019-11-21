@@ -9,6 +9,7 @@ def sample():
     print("hello, world")
     return 100
 
+
 @app.task
 def transfer_img(img, name):
     home = Path.home()
