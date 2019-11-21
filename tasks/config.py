@@ -4,8 +4,8 @@ from kombu import Queue
 from kombu import Exchange
 
 result_serializer = "json"
-broker_url = "redis://10.18.144.36"
-result_backend = "mongodb://10.18.144.36:27017/celery"
+broker_url = "redis://10.18.98.113"
+result_backend = "mongodb://10.18.98.113:27017/celery"
 timezone = "Asia/Shanghai"
 imports = (
     "tasks.trainer",
@@ -18,3 +18,9 @@ task_queues = (
     Queue("default", exchange=Exchange("default"), routing_key="default"),
     Queue("trainer", exchange=Exchange("trainer"), routing_key="trainer.#")
 )
+
+
+task_routes = {
+    'tasks.sample': {'queue': 'default'},
+    "tasks.transfer_img": {"queue": "default"}
+    }
