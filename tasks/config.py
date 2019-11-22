@@ -3,7 +3,7 @@
 from kombu import Queue
 from kombu import Exchange
 
-result_serializer = ("json", "binary")
+result_serializer = "pickle"
 broker_url = "redis://10.18.98.113"
 result_backend = "mongodb://10.18.98.113:27017/celery"
 timezone = "Asia/Shanghai"
