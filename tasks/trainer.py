@@ -13,7 +13,7 @@ def sample():
 @app.task
 def transfer_img(img, name):
     home = Path.home()
-    path = home.joinpath(name)
+    path = home.joinpath(name).as_posix()
     with open(path, "wb") as f:
         f.write(img)
     return True
